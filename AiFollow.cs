@@ -22,14 +22,16 @@ public class AiFollow : MonoBehaviour
 
     void Update()
     {
-
+        // the ball looks both ways
         RaycastHit2D enemyVision_left = Physics2D.Raycast(transform.position, Vector3.left, aggro);
         RaycastHit2D enemyVision_right = Physics2D.Raycast(transform.position, Vector3.right, aggro);
 
+
+        //will roll towards the player if spotted
         if (enemyVision_left.collider.tag == "Player")
         {
 
-            rb.velocity = new Vector2(-speed, 0);
+            rb.velocity = new Vector2(-(speed), 0);
 
 
 
